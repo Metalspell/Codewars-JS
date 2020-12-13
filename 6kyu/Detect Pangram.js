@@ -3,18 +3,13 @@
 // Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
 function isPangram(string) {
-  let result;
-  let arr = [];
-  for (let i = 1; i < 27; i++) {
-    arr.push(string.charCodeAt(i));
-    for (let j = 0; j < arr.length; j++) {
-      if (string.charCodeAt(i) === arr[j]) {
-        result = true;
-      } else {
-        result = false;
-      }
+  string = string.toLowerCase().replace(/[\s.,%]/g, '');
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  for (let i = 0; i<abc.length; i++) {
+    if (string.indexOf(abc[i]) === -1) {
+      return false;
     }
   }
-  return result;
+  return true;
 }
-isPangram("The quick brown fox jumps over the lazy dog.");
+console.log(isPangram("abcdefghijklmopqrstuvwxyz "));
