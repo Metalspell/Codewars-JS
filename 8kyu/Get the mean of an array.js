@@ -4,7 +4,8 @@
 
 //The array will never be empty.
 
-The array will never be empty.
+// The array will never be empty.
+
 let result = 0;
 let sum = 0;
 function getAverage(marks) {
